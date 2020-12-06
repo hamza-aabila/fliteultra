@@ -1,4 +1,39 @@
-<?php include 'include/head.php';?>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="initial-scale=1">
+
+    <title>فوريفر لايت ألترا</title>
+    <link rel='icon' type='image/png' href='assets/img/favicon.png'>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7COswald:400,700%7CDroid+Sans:400,700%7CRoboto:400,700%7CLato:400,700%7CPT+Sans:400,700%7CSource+Sans+Pro:400,600,700%7CNoto+Sans:400,700%7CPT+Sans:400,700%7CUbuntu:400,700%7CBitter:400,700%7CPT+Serif:400,700%7CRokkitt:400,700%7CDroid+Serif:400,700%7CRaleway:400,700%7CInconsolata:400,700"
+        rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo%7COswald%7C" id="custom_google_font" google-font="Roboto">
+    <link rel="stylesheet" href="assets/css/lander.css">
+    <link rel="stylesheet" href="assets/fontawesome/all.css">
+    <link rel="stylesheet" href="assets/fontawesome/v4-shims.css"> 
+		<script>
+		  !function(f,b,e,v,n,t,s)
+		  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		  n.queue=[];t=b.createElement(e);t.async=!0;
+		  t.src=v;s=b.getElementsByTagName(e)[0];
+		  s.parentNode.insertBefore(t,s)}(window, document,'script',
+		  'https://connect.facebook.net/en_US/fbevents.js');
+		  fbq('init', '00000');
+		  fbq('track', 'ViewContent');
+		</script>
+		<noscript><img height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=00000&amp;ev=ViewContent&amp;noscript=1'/></noscript>
+		<script>
+		  fbq('track', 'ViewContent');
+		</script>
+</head>
+
+<body>
 
     <div class="containerWrapper">
         <div class="container fullContainer noTopMargin padding20-top padding20-bottom padding40H noBorder borderSolid border3px cornersAll radius0 shadow0 bgNoRepeat emptySection" id="section--77633" data-title="Section" data-block-color="0074C7" style="padding-top: 20px; padding-bottom: 20px; outline: none;background-color: #FFFFFF"
@@ -674,7 +709,96 @@
             </div>
         </div>
     </div>
-    <?php include 'include/footer.php'; ?> 
+    <style>
+	.class:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.icon-fts{
+    background-color: #000000;
+	-webkit-border-radius: 50%;
+    border-radius: 50%;
+	display: inline-block;
+    line-height: 1;
+	padding: .5em;
+    color: #fff;
+    fill: #fff;
+	font-size: 50px;
+}
+.div-shake{animation: shake 1.5s infinite;}
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+.embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.embed-responsive-16by9{padding-top:56.25%;margin-bottom:15px;}
+
+	</style>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+        	$("#btn_test").click(function(){
+        	var name_client = $("#Nom").val();
+        	var phone_client = $("#Telephone").val();
+        	var city_client = $("#Ville").val();
+        	if(name_client != "" && phone_client != "" && city_client != ""){
+        	$(this).html('<img style="max-height:16px;" src="assets/img/loading.gif" /> المرجو الإنتظار');
+        	}
+        	});
+            var now = new Date();
+            $('#DateOrder').val(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
+
+            $('#Prix').on('change', function () {
+            let prix = $(this).val();
+            if (prix == 399) {
+                $('#Quantite').val(1);
+            } else if (prix == 599) {
+                $('#Quantite').val(2);
+            } else if (prix == 799) {
+                $('#Quantite').val(3);
+            }
+            });
+        });
+    </script>
+	
+    <script>
+    
+    </script>
+    
+<script type="text/javascript" src="assets/js/grafiksoft.js"></script>
 
 </body>
 </html>
